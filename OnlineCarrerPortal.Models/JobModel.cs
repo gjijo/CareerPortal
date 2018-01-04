@@ -22,5 +22,7 @@ namespace OnlineCarrerPortal.Models
         public string EndDate { get; set; }
         public string ContactNumber { get; set; }
         public string EmployerName { get; set; }
+        public string SeekerName { get; set; }
+        public bool IsInterviewScheduled { get; set; }
     }
 }

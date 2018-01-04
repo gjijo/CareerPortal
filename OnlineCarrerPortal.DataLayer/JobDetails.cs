@@ -14,11 +14,11 @@ namespace OnlineCarrerPortal.DataLayer
 {
     public class JobDetails : Entity
     {
-        public List<InterviewModel> GetAppliedJobs(int EmployerID)
+        public List<JobModel> GetAppliedJobs(int EmployerID)
         {
             DynamicParameters parms = new DynamicParameters();
             parms.Add("@EmployerID", EmployerID);
-            return new DapperRepository<InterviewModel>().SelectQuery("SelectAppliedJobsFOrScheduling", parms);
+            return new DapperRepository<JobModel>().SelectQuery("SelectAppliedJobsFOrScheduling", parms);
         }
         public bool InsertJobDetails(JobModel JobDetails)
         {
@@ -34,6 +34,16 @@ namespace OnlineCarrerPortal.DataLayer
             parms.Add("@EndDate", DateTime.Now);
             parms.Add("@ContactNumber", JobDetails.ContactNumber);
             return new DapperRepository<JobModel>().Add("InsertJobs", parms);
+        }
+        public bool InsertInterviewCalls(InterviewModel InterviewDetails)
+        {
+            DynamicParameters parms = new DynamicParameters();
+            parms.Add("@AppliedJobID", InterviewDetails.AppliedJobID);
+            parms.Add("@InterviewDate", InterviewDetails.InterviewDate);
+            parms.Add("@Venue", InterviewDetails.Venue);
+            parms.Add("@Description", InterviewDetails.Description);
+            parms.Add("@Status", InterviewDetails.Status);
+            return new DapperRepository<JobModel>().Add("InsertInterviewCalls", parms);
         }
     }
     

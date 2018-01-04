@@ -1,0 +1,37 @@
+﻿@model List<OnlineCarrerPortal.Models.JobModel>
+@{
+    ViewBag.Title = "AppliedJobsEmployer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Applied Jobs</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Participant</th>
+                    <th>Applied On</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (OnlineCarrerPortal.Models.JobModel Job in Model)
+                {
+                    <tr>
+                        <td>@Job.JobTitle</td>
+                        <td>@Job.SeekerName</td>
+                        <td>@Job.AppliedDate.ToShortDateString()</td>
+                        <td>@Html.Raw(Job.IsInterviewScheduled ? "scheduled" : "<a href=" + Url.Action("ScheduleInterview", "Job", new { JobID = Job.JobID }) + ">Schedule now</a>")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

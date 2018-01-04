@@ -15,71 +15,8 @@
             }
         }
 
-        function fnShowUserList() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("UserList", "Dashboard")');
-        }
 
-        function fnShowEmployeeManagement() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("EmployeeList", "Dashboard")');
-        }
-
-        function fnShowCategoryAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("CategoryAdd", "Dashboard")');
-        }
-
-        function fnShowEvaluationAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("ComplaintsAdd", "Dashboard")');
-        }
-
-        function fnShowRoleAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("RoleAdd", "Dashboard")');
-        }
-
-        function fnShowEmployeeList() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("EmployeeList", "Dashboard")');
-        }
-
-        function fnShowEmployeeAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("EmployeeAdd", "Dashboard")');
-        }
-
-        function fnShowAnnouncementAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("AnnouncementAdd", "Dashboard")');
-        }
-
-        function fnShowAchievementsList() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("AchievementList", "Dashboard")');
-        }
-
-        function fnShowQuestionsAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("QuestionAdd", "Dashboard")');
-        }
-
-        function fnShowTopicsAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("TopicAdd", "Dashboard")');
-        }
-
-        function fnShowComplaintsAdd() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("ComplaintsAdd", "Dashboard")');
-        }
-
-        function fnShowSubCategory() {
-            $('#dvContent').empty();
-            $('#dvContent').load('@Url.Action("SubCategoryAdd", "Dashboard")');
-        }
-    </script>
+        </script>
 </head>
 <body>
     <div class="leftbar">
@@ -90,14 +27,14 @@
             <li class="left_superadmin">
                 <a href="#" onclick="fnShowSubMenu(this);">Jobs</a>
                 <ul class="close">
-                    <li><a href="#" onclick="fnShowAnnouncementAdd();">Post Job</a></li>
+                    <li><a href="@Url.Action("Index", "Job", new { menuID = "PostJob" })">Post Job</a></li>
                     <li><a href="#" onclick="fnShowSubCategory()">View Posted Jobs</a></li>
                 </ul>
             </li>
             <li class="left_usermnagment">
                 <a href="#" onclick="fnShowSubMenu(this);">Interview</a>
                 <ul class="close">
-                    <li><a href="#" onclick="fnShowRoleAdd();">Schedule Interviews</a> </li>
+                    <li><a href="@Url.Action("AppliedJobsEmployer", "Job", new { menuID = "ScheduleInterviews" })" >Schedule Interviews</a> </li>
                 </ul>
             </li>
             <li class="left_empl">

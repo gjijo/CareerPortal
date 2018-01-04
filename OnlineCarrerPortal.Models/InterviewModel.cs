@@ -10,7 +10,7 @@ namespace OnlineCarrerPortal.Models
     {
         public int InterviewID { get; set; }
         public int AppliedJobID { get; set; }
-        public string InterviewDate { get; set; }
+        public DateTime InterviewDate { get; set; }
         public string Venue { get; set; }
         public string Description { get; set; }
         public string Status { get; set; }
