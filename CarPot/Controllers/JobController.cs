@@ -19,7 +19,7 @@ namespace CarPot.Controllers
         [HttpPost]
         public ActionResult AddJob(JobModel objMOdel)
         {
-            JobService.InsertJob(objMOdel);
+            JobService.InsertJob(objMOdel);   
             return View();
         }
 
