@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPot", "CarPot\CarPot.csproj", "{43B2E966-A6AB-4B2E-A3DC-1C817B1ED146}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCarrerPortal.DataLayer", "OnlineCarrerPortal.DataLayer\OnlineCarrerPortal.DataLayer.csproj", "{35FD7B57-864C-42EB-AF4E-6DC5AA89EFBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCarrerPortal.Models", "OnlineCarrerPortal.Models\OnlineCarrerPortal.Models.csproj", "{767244A8-A94E-4AD0-A2E8-84DB392E0EAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCarrerPortal.ServiceLayer", "OnlineCarrerPortal.ServiceLayer\OnlineCarrerPortal.ServiceLayer.csproj", "{D656FE86-1F0E-4767-A191-373A3EEEFBC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43B2E966-A6AB-4B2E-A3DC-1C817B1ED146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B2E966-A6AB-4B2E-A3DC-1C817B1ED146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B2E966-A6AB-4B2E-A3DC-1C817B1ED146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B2E966-A6AB-4B2E-A3DC-1C817B1ED146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35FD7B57-864C-42EB-AF4E-6DC5AA89EFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35FD7B57-864C-42EB-AF4E-6DC5AA89EFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35FD7B57-864C-42EB-AF4E-6DC5AA89EFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35FD7B57-864C-42EB-AF4E-6DC5AA89EFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767244A8-A94E-4AD0-A2E8-84DB392E0EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767244A8-A94E-4AD0-A2E8-84DB392E0EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767244A8-A94E-4AD0-A2E8-84DB392E0EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767244A8-A94E-4AD0-A2E8-84DB392E0EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D656FE86-1F0E-4767-A191-373A3EEEFBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D656FE86-1F0E-4767-A191-373A3EEEFBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D656FE86-1F0E-4767-A191-373A3EEEFBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D656FE86-1F0E-4767-A191-373A3EEEFBC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

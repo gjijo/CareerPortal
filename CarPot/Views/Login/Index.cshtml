@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/css/style.css" rel="stylesheet" />
+
+<div class="login_box">
+    <form action="@Url.Action("Login","Login")" method="post">
+        <ul>
+            <li>
+                <label>User Name</label>
+                <input name="Email" id="textFirstName" placeholder="User Name" type="text" />
+            </li>
+            <li>
+                <label>Password</label>
+                <input name="Password" id="textFirstName" placeholder="Password" type="text" />
+            </li>
+            <li>
+                <input id="btnLogin" value="Login" type="submit" />
+                <input id="btnCancel" value="Cancel" type="button" />
+            </li>
+        </ul>
+    </form>
+</div>
+<div>
+    <form action="@Url.Action("Registration","Login")" method="post">
+        <ul>
+            <li>
+                <label>First Name</label>
+                <input name="FirstName" id="textFirstName" placeholder="First Name" type="text" />
+            </li>
+            <li>
+                <label>Last Name</label>
+                <input name="LastName" id="textFirstName" placeholder="Last Name" type="text" />
+            </li>
+            <li>
+                <label>Contact Number</label>
+                <input name="ContactNumber" id="textFirstName" placeholder="Contact Number" type="text" />
+            </li>
+            <li>
+                <label>Email</label>
+                <input name="Email" id="textFirstName" placeholder="Email" type="text" />
+            </li>
+            <li>
+                <label>Password</label>
+                <input name="Password" id="textFirstName" placeholder="Password" type="text" />
+            </li>
+            <li>
+                <label>Confirm Password</label>
+                <input name="ConfirmPassword" id="textFirstName" placeholder="Confirm Password" type="text" />
+            </li>
+            <li>
+                <label>User Type</label>
+                <select name="UserTypeID">
+                    <option value="2">Company</option>
+                    <option value="3">JobSeeker</option>
+                </select>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="return fnAddFile();" class="addfile">Upload CV</a>
+
+                <input type="file" id="fileBrowse" name="fileBrowse" style="display:none">
+                <input id="CVName" name="CVPath" style="">
+            </li>
+            <li>
+                <input id="btnRegister" value="Register" type="submit" />
+                <input id="btnCancel" value="Cancel" type="button" />
+            </li>
+
+        </ul>
+    </form>
+</div>
+<script>
+    function fnAddFile() {
+        $('#fileBrowse').click();
+    }
+
+    $(function () {
+        $("input:file").change(function (e) {
+            var files = e.target.files;
+            var fileData = new FormData();
+            fileData.append(files[0].name, files[0]);
+            $.ajax({
+                type: 'POST',
+                url: '/Login/CreateCV',
+                data: fileData,
+                contentType: false,
+                processData: false,
+                dataType: "json",
+                success: function (response) {
+                    if (response != null) {
+                        $('#CVName').val(response.Status);
+                    }
+                }
+            });
+        });
+    });
+</script>

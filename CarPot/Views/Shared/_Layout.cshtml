@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function fnShowSubMenu(obj) {
+            if ($(obj).next('ul').hasClass('open')) {
+                $(obj).next('ul').addClass('close');
+                $(obj).next('ul').removeClass('open');
+            }
+            else {
+                $(obj).next('ul').addClass('open');
+                $(obj).next('ul').removeClass('close');
+            }
+        }
+
+        function fnShowUserList() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("UserList", "Dashboard")');
+        }
+
+        function fnShowEmployeeManagement() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("EmployeeList", "Dashboard")');
+        }
+
+        function fnShowCategoryAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("CategoryAdd", "Dashboard")');
+        }
+
+        function fnShowEvaluationAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("ComplaintsAdd", "Dashboard")');
+        }
+
+        function fnShowRoleAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("RoleAdd", "Dashboard")');
+        }
+
+        function fnShowEmployeeList() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("EmployeeList", "Dashboard")');
+        }
+
+        function fnShowEmployeeAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("EmployeeAdd", "Dashboard")');
+        }
+
+        function fnShowAnnouncementAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("AnnouncementAdd", "Dashboard")');
+        }
+
+        function fnShowAchievementsList() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("AchievementList", "Dashboard")');
+        }
+
+        function fnShowQuestionsAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("QuestionAdd", "Dashboard")');
+        }
+
+        function fnShowTopicsAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("TopicAdd", "Dashboard")');
+        }
+
+        function fnShowComplaintsAdd() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("ComplaintsAdd", "Dashboard")');
+        }
+
+        function fnShowSubCategory() {
+            $('#dvContent').empty();
+            $('#dvContent').load('@Url.Action("SubCategoryAdd", "Dashboard")');
+        }
+    </script>
+</head>
+<body>
+    <div class="leftbar">
+        <a href="#" class="main_logo">
+            Online Carrer Portal
+        </a>
+        <ul>
+            <li class="left_superadmin">
+                <a href="#" onclick="fnShowSubMenu(this);">Jobs</a>
+                <ul class="close">
+                    <li><a href="#" onclick="fnShowAnnouncementAdd();">Post Job</a></li>
+                    <li><a href="#" onclick="fnShowSubCategory()">View Posted Jobs</a></li>
+                </ul>
+            </li>
+            <li class="left_usermnagment">
+                <a href="#" onclick="fnShowSubMenu(this);">Interview</a>
+                <ul class="close">
+                    <li><a href="#" onclick="fnShowRoleAdd();">Schedule Interviews</a> </li>
+                </ul>
+            </li>
+            <li class="left_empl">
+                <a href="#" onclick="fnShowSubMenu(this);">Carrer</a>
+                <ul class="close">
+                    <li><a href="#" onclick="fnShowEmployeeList();">Search Jobs</a> </li>
+                    <li><a href="#" onclick="fnShowEmployeeList();">Applied Jobs</a> </li>
+                    <li><a href="#" onclick="fnShowEmployeeAdd();">Scheduled Interview</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="right_content">
+        <div class="header">
+            <a href="#" class="logout">Log out</a>
+        </div>
+        @RenderBody()
+    </div>   
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

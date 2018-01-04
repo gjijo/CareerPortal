@@ -1,0 +1,9 @@
+F:\Projects\Sruthi\OnlineCarrerPortal\OnlineCarrerPortal.Models\bin\Debug\OnlineCarrerPortal.Models.dll
+F:\Projects\Sruthi\OnlineCarrerPortal\OnlineCarrerPortal.Models\bin\Debug\OnlineCarrerPortal.Models.pdb
+F:\Projects\Sruthi\OnlineCarrerPortal\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.dll
+F:\Projects\Sruthi\OnlineCarrerPortal\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.pdb
+C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\bin\Debug\OnlineCarrerPortal.Models.dll
+C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\bin\Debug\OnlineCarrerPortal.Models.pdb
+C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.csprojResolveAssemblyReference.cache
+C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.dll
+C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.pdb

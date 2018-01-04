@@ -1,0 +1,9 @@
+F:\Projects\API.TScribAPP\TScribDataLayer\obj\Debug\TScribDataLayer.csprojResolveAssemblyReference.cache
+F:\Projects\API.TScribAPP\TScribDataLayer\bin\Debug\TScribDataLayer.dll
+F:\Projects\API.TScribAPP\TScribDataLayer\bin\Debug\TScribDataLayer.pdb
+F:\Projects\API.TScribAPP\TScribDataLayer\bin\Debug\Dapper.dll
+F:\Projects\API.TScribAPP\TScribDataLayer\bin\Debug\DapperExtensions.dll
+F:\Projects\API.TScribAPP\TScribDataLayer\bin\Debug\Dapper.xml
+F:\Projects\API.TScribAPP\TScribDataLayer\bin\Debug\DapperExtensions.pdb
+F:\Projects\API.TScribAPP\TScribDataLayer\obj\Debug\TScribDataLayer.dll
+F:\Projects\API.TScribAPP\TScribDataLayer\obj\Debug\TScribDataLayer.pdb
