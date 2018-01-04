@@ -7,3 +7,8 @@ C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\bin\Debug\OnlineCarrerPo
 C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.csprojResolveAssemblyReference.cache
 C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.dll
 C:\Users\ArunA\Desktop\CarPot\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.pdb
+C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.Models\bin\Debug\OnlineCarrerPortal.Models.dll
+C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.Models\bin\Debug\OnlineCarrerPortal.Models.pdb
+C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.csprojResolveAssemblyReference.cache
+C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.dll
+C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.Models\obj\Debug\OnlineCarrerPortal.Models.pdb

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <form action="@Url.Action("AddJob","job")" method="post">
+        <input type="hidden" value="UserID" name="UserID" />
+        <input type="hidden" value="EmployerID" name="EmployerID" />
+        <ul>
+            <li>
+                <label>Job Title</label>
+                <input name="JobTitle" id="textJobTitle" placeholder="Job Title" type="text" />
+            </li>
+            <li>
+                <label>Description</label>
+                <input name="Description" id="textDescription" placeholder="Description" type="text" />
+            </li>
+
+            <li>
+                <label>CompanyName</label>
+                <input name="CompanyName" id="textCompanyName" placeholder="CompanyName" type="text" />
+            </li>
+            <li>
+                <label>SalaryPackage</label>
+                <input name="SalaryPackage" id="textSalaryPackage" placeholder="SalaryPackage" type="text" />
+            </li>
+            <li>
+                <label>RequiredQalification</label>
+                <input name="RequiredQalification" id="textRequiredQalification" placeholder="RequiredQalification" type="text" />
+            </li>
+            <li>
+                <label>EndDate</label>
+                <input name="EndDate" id="textEndDate" placeholder="EndDate" type="text" />
+            </li>
+            <li>
+                <label>ContactNumber</label>
+                <input name="ContactNumber" id="textContactNumber" placeholder="ContactNumber" type="text" />
+            </li>
+            <li>
+                <input id="btnRegister" value="Register" type="submit" />
+                <input id="btnCancel" value="Cancel" type="button" />
+            </li>
+
+        </ul>
+    </form>
+</div>
