@@ -13,13 +13,21 @@ namespace CarPot.Controllers
     {
         public ActionResult Index()
         {
-            List<QualificationModel> objModel = new List<QualificationModel>();
-            objModel = UserService.GetAllQualification();
-            return View(objModel);
+            return View();
         }
         public ActionResult AppliedJobsEmployer()
         {
             List<JobModel> lsModel = JobService.GetAppliedJobs(1);
+            return View(lsModel);
+        }
+        public ActionResult AppliedJobsSeeker()
+        {
+            List<JobModel> lsModel = JobService.GetAppliedJobOfSeeker(1);
+            return View(lsModel);
+        }
+        public ActionResult ScheduledJobsSeeker()
+        {
+            List<InterviewModel> lsModel = JobService.GetScheduledInterviewOfSeeker(1);
             return View(lsModel);
         }
         public ActionResult ScheduleInterview(int JobID)
