@@ -1,7 +1,17 @@
-﻿@{
+﻿@model List<OnlineCarrerPortal.Models.QualificationModel>
+@{
     Layout = null;
 }
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <link href="~/Content/css/style.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.sumoselect.js"></script>
+<link href="~/Content/css/dropdownliststyle.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.asd = $('select[name=Qalification]').SumoSelect({ csvDispCount: 4 });
+    });
+</script>
 
 <div class="login_box">
     <form action="@Url.Action("Login","Login")" method="post">
@@ -53,6 +63,14 @@
                 <select name="UserTypeID">
                     <option value="2">Company</option>
                     <option value="3">JobSeeker</option>
+                </select>
+            </li>
+            <li>
+                <select name="Qalification" multiple="multiple">
+                    @foreach (OnlineCarrerPortal.Models.QualificationModel Qual in Model)
+                    {
+                        <option value="@Qual.QualificationID">@Qual.Qualification</option>
+                    }
                 </select>
             </li>
             <li>

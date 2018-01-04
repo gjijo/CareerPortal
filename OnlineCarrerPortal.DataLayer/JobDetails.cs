@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region Included Namespaces
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,17 +10,32 @@ using System.Linq;
 using OnlineCarrerPortal.Models;
 using System.Data.Common;
 using Dapper;
+#endregion
 
 namespace OnlineCarrerPortal.DataLayer
 {
-    public class JobDetails : Entity
+    public class JobDetails
     {
+        #region GetAppliedJobs
+        /// <summary>
+        /// GetAppliedJobs
+        /// </summary>
+        /// <param name="EmployerID"></param>
+        /// <returns></returns>
         public List<JobModel> GetAppliedJobs(int EmployerID)
         {
             DynamicParameters parms = new DynamicParameters();
             parms.Add("@EmployerID", EmployerID);
             return new DapperRepository<JobModel>().SelectQuery("SelectAppliedJobsFOrScheduling", parms);
         }
+        #endregion
+
+        #region InsertJobDetails
+        /// <summary>
+        /// InsertJobDetails
+        /// </summary>
+        /// <param name="JobDetails"></param>
+        /// <returns></returns>
         public bool InsertJobDetails(JobModel JobDetails)
         {
             DynamicParameters parms = new DynamicParameters();
@@ -45,6 +61,7 @@ namespace OnlineCarrerPortal.DataLayer
             parms.Add("@Status", InterviewDetails.Status);
             return new DapperRepository<JobModel>().Add("InsertInterviewCalls", parms);
         }
+        #endregion
     }
-    
+
 }

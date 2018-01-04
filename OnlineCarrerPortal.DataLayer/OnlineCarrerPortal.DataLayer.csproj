@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionFactory.cs" />
-    <Compile Include="DALHelper.cs" />
     <Compile Include="DapperRepository.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IConnectionFactory.cs" />

@@ -42,3 +42,14 @@ C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Deb
 C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\obj\Debug\OnlineCarrerPortal.ServiceLayer.csprojResolveAssemblyReference.cache
 C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\obj\Debug\TScribServiceLayer.dll
 C:\Users\ArunA\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\obj\Debug\TScribServiceLayer.pdb
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\TScribServiceLayer.dll
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\TScribServiceLayer.pdb
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\OnlineCarrerPortal.Models.dll
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\TScribDataLayer.dll
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\Dapper.dll
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\TScribDataLayer.pdb
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\OnlineCarrerPortal.Models.pdb
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\bin\Debug\Dapper.xml
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\obj\Debug\OnlineCarrerPortal.ServiceLayer.csprojResolveAssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\obj\Debug\TScribServiceLayer.dll
+C:\Users\ADMIN\Source\Repos\CareerPortal\OnlineCarrerPortal.ServiceLayer\obj\Debug\TScribServiceLayer.pdb

@@ -17,10 +17,9 @@ namespace OnlineCarrerPortal.Models
         public string Password { get; set; }
         public string IsRegistrationApproved { get; set; }
         public string IsDeleted { get; set; }
-        public string Qalification { get; set; }
+        public List<string> Qalification { get; set; }
         public string Experience { get; set; }
         public string VPath { get; set; }
-
         public string ContactNumber { get; set; }
     }
 }

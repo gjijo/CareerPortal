@@ -40,5 +40,10 @@ namespace CarPot.Controllers
             JobService.InsertJob(objMOdel);   
             return View();
         }
+
+        public ActionResult SearchJob()
+        {
+            return View();
+        }
     }
 }
