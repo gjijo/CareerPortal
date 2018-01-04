@@ -20,6 +20,16 @@ namespace CarPot.Controllers
             List<JobModel> lsModel = JobService.GetAppliedJobs(1);
             return View(lsModel);
         }
+        public ActionResult AppliedJobsSeeker()
+        {
+            List<JobModel> lsModel = JobService.GetAppliedJobOfSeeker(1);
+            return View(lsModel);
+        }
+        public ActionResult ScheduledJobsSeeker()
+        {
+            List<InterviewModel> lsModel = JobService.GetScheduledInterviewOfSeeker(1);
+            return View(lsModel);
+        }
         public ActionResult ScheduleInterview(int JobID)
         {
             InterviewModel IV = new InterviewModel();

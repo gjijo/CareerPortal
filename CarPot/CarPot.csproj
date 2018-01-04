@@ -169,6 +169,8 @@
     <Content Include="Views\Job\AppliedJobsEmployer.cshtml" />
     <Content Include="Views\Job\ScheduleInterview.cshtml" />
     <Content Include="Views\Job\SearchJob.cshtml" />
+    <Content Include="Views\Job\AppliedJobsSeeker.cshtml" />
+    <Content Include="Views\Job\ScheduledJobsSeeker.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,5 +22,13 @@ namespace OnlineCarrerPortal.Service
         {
             return new JobDetails().GetAppliedJobs(EmployerID);
         }
+        public static List<JobModel> GetAppliedJobOfSeeker(int EmployerID)
+        {
+            return new JobDetails().GetAppliedJobOfSeeker(EmployerID);
+        }
+        public static List<InterviewModel> GetScheduledInterviewOfSeeker(int UserID)
+        {
+            return new JobDetails().GetScheduledInterviewOfSeeker(UserID);
+        }
     }
 }

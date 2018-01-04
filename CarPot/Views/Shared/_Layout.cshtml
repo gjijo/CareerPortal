@@ -40,9 +40,9 @@
             <li class="left_empl">
                 <a href="#" onclick="fnShowSubMenu(this);">Carrer</a>
                 <ul class="close">
-                    <li><a href="#" onclick="fnShowEmployeeList();">Search Jobs</a> </li>
-                    <li><a href="#" onclick="fnShowEmployeeList();">Applied Jobs</a> </li>
-                    <li><a href="#" onclick="fnShowEmployeeAdd();">Scheduled Interview</a> </li>
+                    <li><a href="@Url.Action("SearchJob", "Job", new { menuID = "SearchJobs" })">Search Jobs</a> </li>
+                    <li><a href="@Url.Action("AppliedJobsSeeker", "Job", new { menuID = "AppliedJobs" })">Applied Jobs</a> </li>
+                    <li><a href="@Url.Action("ScheduledJobsSeeker", "Job", new { menuID = "ScheduledInterview" })">Scheduled Interview</a> </li>
                 </ul>
             </li>
         </ul>

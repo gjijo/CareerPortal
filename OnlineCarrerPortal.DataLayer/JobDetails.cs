@@ -30,6 +30,19 @@ namespace OnlineCarrerPortal.DataLayer
         }
         #endregion
 
+        public List<JobModel> GetAppliedJobOfSeeker(int UserID)
+        {
+            DynamicParameters parms = new DynamicParameters();
+            parms.Add("@UserID", UserID);
+            return new DapperRepository<JobModel>().SelectQuery("SelectAppliedJobsOfJobSeaker", parms);
+        }
+        public List<InterviewModel> GetScheduledInterviewOfSeeker(int UserID)
+        {
+            DynamicParameters parms = new DynamicParameters();
+            parms.Add("@UserID", UserID);
+            return new DapperRepository<InterviewModel>().SelectQuery("SelectScheduledJobs", parms);
+        }
+
         #region InsertJobDetails
         /// <summary>
         /// InsertJobDetails
