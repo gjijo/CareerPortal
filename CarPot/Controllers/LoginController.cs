@@ -14,9 +14,16 @@ namespace CarPot.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            List<QualificationModel> objModel = new List<QualificationModel>();
-            objModel = UserService.GetAllQualification();
-            return View(objModel);
+            if (Session["User"] != null)
+            {
+                return View(@"~\Views\Home\Index.cshtml");
+            }
+            else
+            {
+                List<QualificationModel> objModel = new List<QualificationModel>();
+                objModel = UserService.GetAllQualification();
+                return View(objModel);
+            }
         }
 
         #region Registration
@@ -103,9 +110,19 @@ namespace CarPot.Controllers
             if (LoginDetails != null)
             {
                 Session["User"] = LoginDetails;
+                return View(@"~\Views\Home\Index.cshtml");
             }
-            return View(@"~\Views\Home\Index.cshtml");
+            else
+            {
+                return RedirectToAction("Index");
+            }
         } 
         #endregion
+
+        public ActionResult LogOut()
+        {
+            Session["User"] = null;
+            return RedirectToAction("index");
+        }
     }
 }

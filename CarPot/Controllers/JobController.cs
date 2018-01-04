@@ -11,23 +11,39 @@ namespace CarPot.Controllers
 {
     public class JobController : Controller
     {
+        public int UserID
+        {
+            get
+            {
+                if (Session["User"] != null)
+                {
+                    return (Session["User"] as UserModel).UserID;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
         public ActionResult Index()
         {
-            return View();
+            List<QualificationModel> objModel = new List<QualificationModel>();
+            objModel = UserService.GetAllQualification();
+            return View(objModel);
         }
         public ActionResult AppliedJobsEmployer()
         {
-            List<JobModel> lsModel = JobService.GetAppliedJobs(1);
+            List<JobModel> lsModel = JobService.GetAppliedJobs(UserID);
             return View(lsModel);
         }
         public ActionResult AppliedJobsSeeker()
         {
-            List<JobModel> lsModel = JobService.GetAppliedJobOfSeeker(1);
+            List<JobModel> lsModel = JobService.GetAppliedJobOfSeeker(UserID);
             return View(lsModel);
         }
         public ActionResult ScheduledJobsSeeker()
         {
-            List<InterviewModel> lsModel = JobService.GetScheduledInterviewOfSeeker(1);
+            List<InterviewModel> lsModel = JobService.GetScheduledInterviewOfSeeker(UserID);
             return View(lsModel);
         }
         public ActionResult ScheduleInterview(int JobID)

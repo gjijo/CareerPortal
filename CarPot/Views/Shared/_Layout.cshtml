@@ -14,9 +14,22 @@
                 $(obj).next('ul').removeClass('close');
             }
         }
-
-
-        </script>
+        $(function () {
+            var menuID = getUrlVars(menuID);;
+            var atag = $('a[menuID=' + menuID + ']');
+            fnShowSubMenu(atag);
+        });
+        function getUrlVars(pm) {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars[pm];
+        }
+    </script>
 </head>
 <body>
     <div class="leftbar">
@@ -25,34 +38,35 @@
         </a>
         <ul>
             <li class="left_superadmin">
-                <a href="#" onclick="fnShowSubMenu(this);">Jobs</a>
+                <a href="#" onclick="fnShowSubMenu(this);" menuID="Jobs">Jobs</a>
                 <ul class="close">
-                    <li><a href="@Url.Action("Index", "Job", new { menuID = "PostJob" })">Post Job</a></li>
-                    <li><a href="#" onclick="fnShowSubCategory()">View Posted Jobs</a></li>
+                    <li><a href="@Url.Action("Index", "Job", new { menuID = "Jobs" })">Post Job</a></li>
                 </ul>
             </li>
             <li class="left_usermnagment">
-                <a href="#" onclick="fnShowSubMenu(this);">Interview</a>
+                <a href="#" onclick="fnShowSubMenu(this);" menuID="Interview">Interview</a>
                 <ul class="close">
-                    <li><a href="@Url.Action("AppliedJobsEmployer", "Job", new { menuID = "ScheduleInterviews" })" >Schedule Interviews</a> </li>
+                    <li><a href="@Url.Action("AppliedJobsEmployer", "Job", new { menuID = "Interview" })">Schedule Interviews</a> </li>
                 </ul>
             </li>
             <li class="left_empl">
-                <a href="#" onclick="fnShowSubMenu(this);">Carrer</a>
+                <a href="#" onclick="fnShowSubMenu(this);" menuID="Carrer">Carrer</a>
                 <ul class="close">
-                    <li><a href="@Url.Action("SearchJob", "Job", new { menuID = "SearchJobs" })">Search Jobs</a> </li>
-                    <li><a href="@Url.Action("AppliedJobsSeeker", "Job", new { menuID = "AppliedJobs" })">Applied Jobs</a> </li>
-                    <li><a href="@Url.Action("ScheduledJobsSeeker", "Job", new { menuID = "ScheduledInterview" })">Scheduled Interview</a> </li>
+                    <li><a href="@Url.Action("SearchJob", "Job", new { menuID = "Carrer" })">Search Jobs</a> </li>
+                    <li><a href="@Url.Action("AppliedJobsSeeker", "Job", new { menuID = "Carrer" })">Applied Jobs</a> </li>
+                    <li><a href="@Url.Action("ScheduledJobsSeeker", "Job", new { menuID = "Carrer" })">Scheduled Interview</a> </li>
                 </ul>
             </li>
         </ul>
     </div>
     <div class="right_content">
         <div class="header">
-            <a href="#" class="logout">Log out</a>
+            <a href="@Url.Action("LogOut", "Login")" class="logout">Log out</a>
         </div>
-        @RenderBody()
-    </div>   
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
