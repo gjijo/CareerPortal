@@ -9,9 +9,13 @@ namespace OnlineCarrerPortal.Models
     public class QualificationModel
     {
         /// <summary>
-        /// QualificationID
+        /// UserID
         /// </summary>
         public long UserID { get; set; }
+
+        /// <summary>
+        /// QualificationID
+        /// </summary>
         public long QualificationID { get; set; }
 
         /// <summary>
