@@ -14,7 +14,9 @@ namespace CarPot.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            List<QualificationModel> objModel = new List<QualificationModel>();
+            objModel = UserService.GetAllQualification();
+            return View(objModel);
         }
 
         #region Registration
@@ -37,8 +39,18 @@ namespace CarPot.Controllers
         [HttpPost]
         public ActionResult Registration(UserModel objModel)
         {
-            UserService.InsertUser(objModel);
-            return View(@"~\Views\Login\Index.cshtml");
+            QualificationModel QM = new QualificationModel();
+            UserModel User = UserService.InsertUser(objModel);
+            foreach(string s in objModel.Qalification)
+            {                
+                QM.UserID = User.UserID;
+                QM.QualificationID = long.Parse(s);
+                UserService.InsertUserQualificationReln(QM);
+            }
+                        
+            List<QualificationModel> objModelQ = new List<QualificationModel>();
+            objModelQ = UserService.GetAllQualification();
+            return View(@"~\Views\Login\Index.cshtml", objModelQ);
         } 
         #endregion
 

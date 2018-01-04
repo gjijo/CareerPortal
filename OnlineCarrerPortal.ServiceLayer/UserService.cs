@@ -10,25 +10,24 @@ namespace OnlineCarrerPortal.Service
 {
     public class UserService
     {
-        public static int InsertUser(UserModel RegisterDetails)
+        public static UserModel InsertUser(UserModel RegisterDetails)
         {
-            using (DALHelper helper = new DALHelper())
-            {
-                helper.OpenConnectionWithTransaction();
-
-                helper.GetDAL_PropertyDetails(false).InsertUserDetails(RegisterDetails);
-
-                helper.EndConnectionAndCommitTransaction();
-            }
-            return 1;
+            return new PropertyDetails().InsertUserDetails(RegisterDetails);
         }
 
         public static UserModel GetUserLoginDetails(UserModel objModel)
         {
-            using (DALHelper helper = new DALHelper())
-            {
-                return helper.GetDAL_PropertyDetails(false).GetUserLoginDetails(objModel.Email,objModel.Password);
-            }
+            return new PropertyDetails().GetUserLoginDetails(objModel.Email, objModel.Password);
+        }
+
+        public static List<QualificationModel> GetAllQualification()
+        {
+            return new PropertyDetails().GetAllQualification();
+        }
+
+        public static bool InsertUserQualificationReln(QualificationModel qualificationModel)
+        {
+            return new PropertyDetails().InsertUserQualificationReln(qualificationModel);
         }
     }
 }

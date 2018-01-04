@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="InterviewModel.cs" />
     <Compile Include="JobModel.cs" />
+    <Compile Include="QualificationModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
