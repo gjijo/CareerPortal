@@ -24,5 +24,10 @@ namespace OnlineCarrerPortal.Models
         public string EmployerName { get; set; }
         public string SeekerName { get; set; }
         public bool IsInterviewScheduled { get; set; }
+
+        /// <summary>
+        /// Qualification
+        /// </summary>
+        public List<string> Qualification { get; set; }
     }
 }

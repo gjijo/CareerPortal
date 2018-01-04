@@ -16,6 +16,23 @@ namespace OnlineCarrerPortal.DataLayer
 {
     public class JobDetails
     {
+        public List<JobModel> SearchJobs(string title, string qualification)
+        {
+            DynamicParameters parms = new DynamicParameters();
+            parms.Add("@title", title);
+            parms.Add("@qualification", qualification);
+            return new DapperRepository<JobModel>().SelectQuery("SelectAllJobs", parms);
+        }
+        public bool ApplyThisJob(int JobID, int UserID, int EmployerID)
+        {
+            DynamicParameters parms = new DynamicParameters();
+            parms.Add("@JobID", JobID);
+            parms.Add("@UserID", UserID);
+            parms.Add("@EmployerID", UserID);
+            parms.Add("@IsDeleted", false);
+            parms.Add("@AppliedDate", DateTime.Now);
+            return new DapperRepository<JobModel>().Add("InsertAppliedJobs", parms);
+        }
         #region GetAppliedJobs
         /// <summary>
         /// GetAppliedJobs
@@ -36,7 +53,7 @@ namespace OnlineCarrerPortal.DataLayer
         /// </summary>
         /// <param name="JobDetails"></param>
         /// <returns></returns>
-        public bool InsertJobDetails(JobModel JobDetails)
+        public JobModel InsertJobDetails(JobModel JobDetails)
         {
             DynamicParameters parms = new DynamicParameters();
             parms.Add("@JobTitle", JobDetails.JobTitle);
@@ -49,7 +66,7 @@ namespace OnlineCarrerPortal.DataLayer
             parms.Add("@RequiredQalification", JobDetails.RequiredQalification);
             parms.Add("@EndDate", DateTime.Now);
             parms.Add("@ContactNumber", JobDetails.ContactNumber);
-            return new DapperRepository<JobModel>().Add("InsertJobs", parms);
+            return new DapperRepository<JobModel>().FindByID("InsertJobs", parms);
         }
         public bool InsertInterviewCalls(InterviewModel InterviewDetails)
         {

@@ -22,5 +22,10 @@ namespace OnlineCarrerPortal.Models
         /// Qualification
         /// </summary>
         public string Qualification { get; set; }
+
+        /// <summary>
+        /// JobID
+        /// </summary>
+        public long JobID { get; set; }
     }
 }

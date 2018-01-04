@@ -10,7 +10,15 @@ namespace OnlineCarrerPortal.Service
 {
     public class JobService
     {
-        public static bool InsertJob(JobModel JobDetails)
+        public static List<JobModel> SearchJobs(string title, string qualification)
+        {
+            return new JobDetails().SearchJobs(title, qualification);
+        }
+        public static bool ApplyThisJob(int JobID, int UserID, int EmployerID)
+        {
+            return new JobDetails().ApplyThisJob(JobID, UserID, EmployerID);
+        }
+        public static JobModel InsertJob(JobModel JobDetails)
         {
             return new JobDetails().InsertJobDetails(JobDetails);
         }

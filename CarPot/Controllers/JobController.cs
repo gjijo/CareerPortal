@@ -13,7 +13,9 @@ namespace CarPot.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<QualificationModel> objModel = new List<QualificationModel>();
+            objModel = UserService.GetAllQualification();
+            return View(objModel);
         }
         public ActionResult AppliedJobsEmployer()
         {
@@ -37,13 +39,31 @@ namespace CarPot.Controllers
         [HttpPost]
         public ActionResult AddJob(JobModel objMOdel)
         {
-            JobService.InsertJob(objMOdel);   
+            QualificationModel QM = new QualificationModel();
+            JobModel job = JobService.InsertJob(objMOdel);
+            foreach (string s in objMOdel.Qualification)
+            {
+                QM.JobID = job.JobID;
+                QM.QualificationID = long.Parse(s);
+                UserService.InsertUserQualificationReln(QM);
+            }
             return View();
         }
 
         public ActionResult SearchJob()
         {
-            return View();
+            List<QualificationModel> objModel = new List<QualificationModel>();
+            objModel = UserService.GetAllQualification();
+            return View(objModel);
+        }
+
+        public JsonResult GetAvailableJobs(string JobTitle, string JobType)
+        {            
+            return Json(JobService.SearchJobs(JobTitle, JobType), JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult ApplyThisJob(int JobID, int EmployerID)
+        {
+            return Json(JobService.ApplyThisJob(JobID, 1, EmployerID), JsonRequestBehavior.AllowGet);
         }
     }
 }

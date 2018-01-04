@@ -1,16 +1,85 @@
-﻿
-@{
-    ViewBag.Title = "SearchJob";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model List<OnlineCarrerPortal.Models.QualificationModel>
+    @{
+        ViewBag.Title = "SearchJob";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <script src="~/Scripts/jquery.sumoselect.js"></script>
+    <link href="~/Content/css/dropdownliststyle.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            window.asd = $('select[name=Qalification]').SumoSelect({ csvDispCount: 4 });
+        });
+        function fnSearchJob() {
+            var JobTitle = $('#txtSearchJobTitle').val();
+            var JobType = $('select[name=JobType]').val().join();
+            var dataURL = '@Url.Action("GetAvailableJobs", "Job")' + '?JobTitle=' + JobTitle + '&JobType=' + JobType;
+            $.get(dataURL, function (lsJobs, status) {
+                debugger;
+                BindToView(lsJobs); console.log(lsJobs);
+            });
+        }
+        function BindToView(lsJobs) {
+            $("#tBodyView").empty();
+            if (lsJobs != null && lsJobs.length > 0) {
+                for (var i = 0; i < lsJobs.length; i++) {
+                    var d = new Date(lsJobs[i].EndDate);
+                    var datestring = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
+                    var tds = '<td>' + lsJobs[i].JobTitle + '</td>';
+                    tds += '<td>' + lsJobs[i].RequiredQalification + '</td>';
+                    tds += '<td>' + datestring + '</td>';
+                    tds += '<td><a onClick="fnApplyThisJob(' + lsJobs[i].JobID + ',' + lsJobs[i].EmployerID + ')">Apply</a></td>';
+                    $("#tBodyView").append($('<tr>' + tds + '</tr>'));
+                }
+            }
+            else {
+                $("#tBodyView").append($('<tr><td colspan="4">No Jobs found</td></tr>'));
+            }
+        }
+        function fnApplyThisJob(JobID, EmployerID) {
+            var dataURL = '@Url.Action("ApplyThisJob", "Job")' + '?JobID=' + JobID + '&EmployerID=' + EmployerID;
+            $.get(dataURL, function (IsApplied, status) {
+                alert(IsApplied ? "Applied Succesfully" : "Error. Please try again later!!!");
+            });
+            return false;
+        }
+    </script>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Search Job Here</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <input type="text" name="JobTitle" id="txtSearchJobTitle" />
+        </div>
+        <div class="col-lg-2">
+            <select name="JobType" multiple="multiple" id="txtSearchJobType">
+                @foreach (OnlineCarrerPortal.Models.QualificationModel Qual in Model)
+            {
+                    <option value="@Qual.QualificationID">@Qual.Qualification</option>
+                }
+            </select>
 
-<h2>SearchJob</h2>
-
-<div>
-    <ul>
-        <li>
-            <span>Search Job Here :</span>
-            <span><input type="text" name="JobType"/></span>
-        </li>        
-    </ul>    
-</div>
+        </div>
+        <div class="col-lg-2">
+            <input type="button" value="Search" id="btnSearch" onclick="return fnSearchJob()" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Job Listing</h3>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Qualification</th>
+                    <th>Last date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tBodyView"></tbody>
+        </table>
+    </div>

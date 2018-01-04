@@ -1,9 +1,17 @@
-﻿
+﻿@model List<OnlineCarrerPortal.Models.QualificationModel>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.sumoselect.js"></script>
+<link href="~/Content/css/dropdownliststyle.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.asd = $('select[name=Qalification]').SumoSelect({ csvDispCount: 4 });
+    });
+</script>
 <div>
     <form action="@Url.Action("AddJob","job")" method="post">
         <input type="hidden" value="UserID" name="UserID" />
@@ -39,7 +47,16 @@
                 <input name="ContactNumber" id="textContactNumber" placeholder="ContactNumber" type="text" />
             </li>
             <li>
-                <input id="btnRegister" value="Register" type="submit" />
+                <label>Qualification</label>
+                <select name="Qalification" multiple="multiple">
+                    @foreach (OnlineCarrerPortal.Models.QualificationModel Qual in Model)
+                    {
+                        <option value="@Qual.QualificationID">@Qual.Qualification</option>
+                    }
+                </select>
+            </li>
+            <li>
+                <input id="btnRegister" value="Post Job" type="submit" />
                 <input id="btnCancel" value="Cancel" type="button" />
             </li>
 
